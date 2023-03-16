@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CountryService } from '../country.service';
-
 @Component({
   selector: 'app-list-country',
   templateUrl: './list-country.component.html',
