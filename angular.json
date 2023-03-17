@@ -77,6 +77,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "codeCoverage": true,
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -91,11 +92,60 @@
             ],
             "scripts": []
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "demoMultiModules:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "demoMultiModules:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "demoMultiModules:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "demoMultiModules:serve:development"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "demoMultiModules:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "demoMultiModules:serve:production"
+            }
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "7873b06d-c9fc-412f-82a9-1b36c8c4ef03"
+    "analytics": "7873b06d-c9fc-412f-82a9-1b36c8c4ef03",
+    "schematicCollections": [
+      "@cypress/schematic",
+      "@schematics/angular"
+    ]
   }
 }

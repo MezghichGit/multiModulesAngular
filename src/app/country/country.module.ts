@@ -18,7 +18,7 @@ import { BgCountryDirective } from './bg-country.directive';
   imports: [
     CommonModule,
     CountryRoutingModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class CountryModule { }

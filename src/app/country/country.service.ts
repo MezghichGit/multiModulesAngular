@@ -1,10 +1,21 @@
 import { Injectable } from '@angular/core';
-
+import {HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class CountryService {
+baseUrl:string ="http://127.0.0.1:83/countries";
+  constructor(private http:HttpClient) { }
 
+  getAllCountries(){
+    console.log("Ok");
+    return this.http.get(this.baseUrl);
+  }
+
+  addCountry(country:any){
+    return this.http.post(this.baseUrl,country);
+  }
+/*
   countries=[
     {
       'id':1,
@@ -18,9 +29,9 @@ export class CountryService {
       'id':3,
       'libelle':'Espagne'
     }
-  ]
-  constructor() { }
+  ]*/
 
+/*
   getCountries(){
     return this.countries
   }
@@ -32,5 +43,5 @@ export class CountryService {
     }
     this.countries.push(data);
     return country;
-  }
+  }*/
 }

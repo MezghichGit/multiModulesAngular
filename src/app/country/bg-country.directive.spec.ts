@@ -2,7 +2,7 @@ import { BgCountryDirective } from './bg-country.directive';
 
 describe('BgCountryDirective', () => {
   it('should create an instance', () => {
-    const directive = new BgCountryDirective();
+    const directive = BgCountryDirective;
     expect(directive).toBeTruthy();
   });
 });

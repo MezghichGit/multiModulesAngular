@@ -11,6 +11,12 @@ export class ListCountryComponent implements OnInit{
   constructor(private countryService:CountryService){}
 
   ngOnInit(){
-    this.countries = this.countryService.getCountries();
+    //this.countries = this.countryService.getCountries();
+    this.countryService.getAllCountries().subscribe(
+      data =>{
+        console.log("Ok2")
+      this.countries = data
+      }
+    );
   }
 }
