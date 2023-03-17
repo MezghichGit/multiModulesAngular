@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders  } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,11 +9,20 @@ baseUrl:string ="http://127.0.0.1:83/countries";
 
   getAllCountries(){
     console.log("Ok");
+    //const headers = new HttpHeaders({ Authorization: 'Bearer ' + sessionStorage.getItem('token') });
+    //return this.http.get(this.baseUrl,{headers});
     return this.http.get(this.baseUrl);
   }
 
   addCountry(country:any){
+    //const headers = new HttpHeaders({ Authorization: 'Bearer ' + sessionStorage.getItem('token') });
+    //return this.http.post(this.baseUrl,country,{headers});
     return this.http.post(this.baseUrl,country);
+  }
+
+  getToken()
+  {
+    return this.http.get("http://127.0.0.1:83/token/sign");
   }
 /*
   countries=[

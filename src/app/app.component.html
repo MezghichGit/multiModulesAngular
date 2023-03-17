@@ -1,7 +1,7 @@
 <h1 align="center">Application Angular Multi-Modules</h1>
-
+<h3 *ngIf="username">{{username}}</h3>
 <button class="btn btn-primary" routerLink="/country" style="margin-right:5px;">Countries</button>
 <button class="btn btn-success" routerLink="/person" style="margin-right:5px;" >Persons</button>
-<button class="btn btn-warning" routerLink="" style="margin-right:5px;">Home</button>
+<button class="btn btn-warning" (click)="login()" routerLink="" style="margin-right:5px;">Home</button>
 
 <router-outlet></router-outlet>
